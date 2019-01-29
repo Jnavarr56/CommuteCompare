@@ -1,0 +1,133 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Aleo|Lato|Roboto+Condensed|Source+Sans+Pro:300');
+$landing-font: 'Aleo';
+
+@import "dashboard";
+@import "sessions";
+@import "landing";
+@import "registrations";
+@import "passwords";
+@import "points";
+
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+}
+body {
+    margin: 0 auto;
+    background: #DA22FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    animation: Gradient 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.github-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    padding-right: 15px !important;
+    transform: translateY(-50%);
+    font-size: 33.33px;
+    padding-bottom: 0;
+    padding-top: 0;
+    color: rgba(0, 0, 0, .5);
+    &:hover {
+        color: rgba(0, 0, 0, .75);
+    }
+}
+
+.alert {
+    position: absolute;
+    width: 100%;
+}
+
+
+.grow { transition: all .2s ease-in-out; }
+
+.grow:hover { transform: scale(1.5); }
+
+#circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  font-size: 45px;
+  color: white;
+  text-align: center;
+  line-height: 85px;
+  float: left;
+  margin: 20px;
+}
+
+.red {
+  background-color:red;
+}
+
+.blue {
+  background-color:#007fcc;
+}
+
+.green {
+  background-color:#6dc066;
+}
+
+.yellow {
+  background-color:#fee529;
+}
+
+.gray {
+  background-color:gray;
+}
+
+.purple {
+  background-color:purple;
+}
+
+.brown {
+  background-color:brown;
+}
+
+.orange {
+  background-color:orange;
+}
+
+.limegreen {
+  background-color:#c9f688;
+}
+
+.icons-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}

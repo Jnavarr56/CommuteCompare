@@ -1,0 +1,275 @@
+.registrations {
+    &.new, &.edit {
+        overflow-y: scroll;
+        .nav-item {
+            left: 0 !important;
+        }
+        .container-fluid {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .row {
+                position: relative;
+                bottom: 2.5%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                form {
+                    label, h2 {
+                        font-family: $landing-font;
+                    }
+                    .btn-edit {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+
+#preview-pic, #current-account-pic {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+}
+
+#preview-pic {
+    display: none;
+}
+    }
+}
+
+.registrations {
+    &.edit {
+        .container-fluid {
+            .row {
+                form {
+                    label, h2 {
+                        font-family: $landing-font;
+                    }
+                    .form-group {
+                        margin-bottom: 0rem;
+                    }
+                }
+            }
+        }
+        .jumbotron {
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+
+.registrations {
+    &.edit {
+        .jumbotron {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+
+    }
+}
+} 
+
+
+
+.btn-sign-up {
+    margin: 5px 5px 5px 10px;
+}
+.break-sign-up {
+    display: none;
+}
+
+@media (max-width: 425px) {
+    .registrations {
+        &.new, &.edit {
+            overflow-y: scroll;
+            .container-fluid {
+                .row {
+                    bottom: -15px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                        .btn {
+                            margin: 10px 0 10px 0;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .break-sign-up {
+        display: block;
+    }
+    .registrations {
+        &.edit {
+            overflow-y: scroll;
+        }
+    }
+}
+
+
+@media (max-width: 380px) {
+    .registrations {
+        &.new {
+            .container-fluid {
+                .row {
+                    bottom: -65px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+}
+
+@media (max-width: 362.5px) {
+    .registrations {
+        &.new {
+            .container-fluid {
+                .row {
+                    bottom: -125px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .registrations {
+        &.edit {
+            .container-fluid {
+                .row {
+                    bottom: -20px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+}
+@media (max-width: 350px) {
+    .registrations {
+        &.new {
+            .container-fluid {
+                .row {
+                    bottom: -150px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .registrations {
+        &.edit {
+            .container-fluid {
+                .row {
+                    bottom: 0px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .break-sign-up {
+        display: block;
+    }
+
+
+    .break-sign-up {
+        display: block;
+    }
+    
+    
+}
+
+
+
+#no-confirmation-instructions-registrations {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    position: relative;
+}
+
+@media (max-width: 425px) {
+    .registrations {
+        &.edit {
+            align-items: flex-start;    
+            .container-fluid {
+                align-items: flex-start;
+                .row {
+                }
+            }
+        }
+        #preview-pic, #current-account-pic {
+            height: 80px  !important;
+            width: 80px  !important;
+        }
+        #preview-pic {
+            left: 65% !important;
+        }
+    }
+
+}
+#clear-upload-button {
+    position: absolute;
+    left: 0;
+}
+
+
+
+@media (max-width: 330px) {
+
+    .registrations {
+        &.edit {
+            .container-fluid {
+                .row {
+                    bottom: -20px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+    
+}
+
+#sign-up-button-trigger {
+    color: white;
+}
+
+#real-sign-up-button {
+    display: none;
+}

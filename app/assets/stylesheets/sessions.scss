@@ -1,0 +1,117 @@
+.sessions {
+    &.new {
+        .alert {
+            top: 56px;
+            position: absolute;
+            width: 100%;
+            z-index: 8000;
+        }
+        overflow: scroll;
+        .container-fluid {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .row {
+                position: relative;
+                bottom: 0%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                form {
+                    label, h2 {
+                        font-family: $landing-font;
+                    }
+                    .btn {
+                        margin: 5px;
+                    } 
+                }
+            }
+        }
+        .nav-item {
+            left: 0 !important;
+        }
+        .navbar {
+            position: fixed !important;
+            width: 100% !important;
+            z-index: 5000 !important;
+        }
+    }
+}
+@media (max-width: 425px) {
+    .sessions {
+        &.new {
+            
+            .container-fluid {
+                align-items: flex-start;
+                .row {
+                    bottom: -100px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                        .btn {
+                            margin:  5px 0 5px 0;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .break-sign-up {
+        display: block;
+    }
+}
+@media (max-width: 350px) {
+    .sessions {
+        &.new {
+            .container-fluid {
+                .row {
+                    bottom: -85px;
+                    form {  
+                        .form-group {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .break-sign-up {
+        display: block;
+    }
+}
+@media (max-height: 568px) {
+    .sessions {
+        &.new {
+            overflow-y: scroll;
+        }
+    }
+
+}
+
+.shake {
+    position: relative;
+    animation: QuickShake .75s ease 0s 1;
+}
+@keyframes QuickShake {
+
+    25% {
+        transform: translateX(-5%);
+    }
+    50% {
+        background-color: rgba(red, .25);
+    }
+    75% {
+        transform: translateX(5%);
+    }
+
+}
+
+
+#real-log-in-button {
+    display: none;
+}

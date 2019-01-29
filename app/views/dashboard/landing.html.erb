@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div id="particles-js"></div>
+    <div id="particles-js2"></div>
+    <div class="row">
+        <div class="column col-12 col-md-10 col-lg-8 col-xl-6">
+            <div class="jumbotron bg-dark">
+                <h1 class="display-4 text-light">Welcome to CommuteCompare</h1>
+                <p class="lead text-light">Finding NYC aparments can be tough and commutes are increasingly important factors in the process. CommuteCompare can make things a little easier.</p>
+                <p class="text-light">
+                    After uploading the addresses some of the places you most visit the most,
+                    you can upload addresses of potential aparments you're considering along with 
+                    specific info, like number of bedrooms.
+                    <br>
+                    <br>
+                    CommuteCompare will calculate average communte time to all of your points of interest and
+                    display it in tabular format.
+
+                    You can also:
+                </p>
+                <ul class="text-light">
+                    <li>Sign in/up with Google or Facebook</li>
+                    <li>Download your data in CSV format</li>
+                </ul>
+                <hr class="my-4">
+                <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+                <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+                <%= link_to "Forgot your Password?", new_user_password_path, class: "btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+

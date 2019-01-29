@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div id="particles-js"></div>
+  <div id="particles-js2"></div>
+    <div class="row">
+        <div class="column col-12 col-md-10 col-lg-8 col-xl-6">
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'jumbotron'}) do |f| %>
+            <%= devise_error_messages! %>
+            <h2>Sign Up</h2>
+            <div class="field form-group">
+              <%= f.label :uploaded_profile_pic, "Profile Picture (optional)" %><br />   
+              <div class="custom-file">
+                <%= f.file_field :uploaded_profile_pic, class: "custom-file-input" %>
+                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                <div class="invalid-feedback">Example invalid custom file feedback</div>
+              </div>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control required-for-sign-up" %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :first_name, 'First Name' %><br />
+              <%= f.text_field :first_name, class:"form-control" %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :last_name, 'Last Name' %><br />
+              <%= f.text_field :last_name, class:"form-control"%>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :password, 'Password' %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class:"form-control required-for-sign-up" %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :password_confirmation, 'Password Confirmation' %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control required-for-sign-up" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Sign up", class: 'btn btn-primary sign-up-button btn-sign-up', id: 'real-sign-up-button' %>
+              <a class='btn btn-primary sign-up-button btn-sign-up' id='sign-up-button-trigger'>Sign Up</a>
+              <br class="break-sign-up">
+              <%- if devise_mapping.omniauthable? %>
+                <%- resource_class.omniauth_providers.each do |provider| %>
+                  <%= link_to "Sign up with <span class='badge badge-light'><i class='fab fa-#{OmniAuth::Utils.camelize(provider) == 'GoogleOauth2' ? 'google' : 'facebook-f'}'></span></i>".html_safe, omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary btn-sign-up' %>
+                <% end -%>
+              <% end -%>
+              <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: 'btn btn-primary btn-sign-up', id: 'no-confirmation-instructions-registrations' %><br/>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>

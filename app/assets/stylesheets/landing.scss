@@ -1,0 +1,89 @@
+.dashboard {
+    &.landing {
+        overflow: hidden;
+        .container-fluid {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .row {
+                position: relative;
+                bottom: 5%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .jumbotron {
+                    p { font-family: $landing-font; }
+                    ul { font-family: $landing-font; }
+                    h1 { font-family: $landing-font; }
+                    //z-index: 1000;
+                    //background-color: white;
+                }
+            }
+        }
+        .nav-item {
+            left: 0 !important;
+        }
+
+    }
+
+}
+
+@media (max-width: 576px) {
+    .dashboard {
+        &.landing {
+            .container-fluid {
+                .row {
+                    height: 75%;
+                    width: 100%;
+                    .column {
+                        height: 100%;
+                        .jumbotron {
+                            height: 100%;
+                            h1 { font-weight: bolder; font-family: $landing-font; font-size: 200%;}
+                            ul { font-family: $landing-font; font-size: 100%;}
+                            p { font-family: $landing-font; font-size: 100%; margin-bottom: 1rem;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .dashboard {
+        &.landing {
+            .container-fluid {
+                .row {
+                    .column {
+                        .jumbotron {
+                            h1 { font-weight: bolder; font-family: $landing-font; font-size: 175%;}
+                            ul { font-family: $landing-font; font-size: 75%;}
+                            p { font-family: $landing-font; font-size: 75%; margin-bottom: 1rem;}
+                            .landing-logo { display: none; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 330px) {
+    .dashboard {
+        &.landing {
+            .container-fluid {
+                .row {
+                    .column {
+                        .jumbotron {
+                            h1 { font-size: 175%;}
+                            ul { font-size: 75%;}
+                            p { margin-bottom: .25rem;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

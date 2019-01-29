@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="column col-12 col-md-10 col-lg-8 col-xl-6">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'jumbotron' }) do |f| %>
+            <h2>Reset Password</h2>
+            <%= devise_error_messages! %>
+            <div class="field form-group">
+              <%= f.label :email, 'Email' %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'  %>
+            </div>
+          <div class="actions">
+            <%= f.submit "Send me reset password instructions", class: 'btn btn-primary' %>
+            <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: 'btn btn-primary' %><br />
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

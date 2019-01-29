@@ -1,0 +1,19 @@
+// Place all the styles related to the Points controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.points.index {
+    .container-fluid {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .row {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+}

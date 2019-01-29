@@ -1,0 +1,35 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Configuration of credentials for Amazon S3 with Active Storage.
+# Must use ERB syntax because this is not a Rails file.
+amazon:
+  service: S3
+  access_key_id: <%= ENV["AMAZON_ACCESS_ID"] %>
+  secret_access_key: <%= ENV["AMAZON_SECRET"] %>
+  region: <%= ENV["AMAZON_S3_BUCKET_REGION"] %>
+  bucket: <%= ENV["AMAZON_S3_BUCKET"] %>
+
+# Remember not to checkin your GCS keyfile to a repository
+# google:
+#   service: GCS
+#   project: your_project
+#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
+#   bucket: your_own_bucket
+
+# Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
+# microsoft:
+#   service: AzureStorage
+#   storage_account_name: your_account_name
+#   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
+#   container: your_container_name
+
+# mirror:
+#   service: Mirror
+#   primary: local
+#   mirrors: [ amazon, google, microsoft ]
