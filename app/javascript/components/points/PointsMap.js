@@ -6,8 +6,8 @@ class PointsMap extends React.Component {
     render() {
 
         return (
-            <div className="col-12">
-                <p>Test</p>
+            <div className="map-jumbotron jumbotron bg-dark col-7">
+                <div id="map"></div>
             </div>
         );
     }

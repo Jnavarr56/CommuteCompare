@@ -1,3 +1,130 @@
-// Place all the styles related to the Apartments controller here.
+// Place all the styles related to the Points controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.apartments.index {
+    overflow: scroll;
+    padding-bottom: 10px;
+    .container-fluid {
+        height: 100%;
+        width: 100%;
+        padding-left: 15%;
+        padding-right: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        .row {
+
+            .col-5, .col-7  {
+                height: 50%;
+                margin-bottom: -2%;
+            } 
+
+            .col-5 {
+                padding-left: 0;
+                form {
+                    padding: 30px 30px 15px 30px;
+                    label, .form-group {
+                        margin-bottom: .15rem;
+                    }
+                }
+            }
+            .left-col {
+                align-self: flex-start;
+            }
+            width: 100%; 
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+    }
+    .form-check {
+        padding-left: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .form-check-input {
+        position: relative;
+        margin: 0 10px 0 0;
+        //right: 0;
+    }
+    form {
+        button {
+            margin-top: 5px;
+        }
+        height: 100%;
+        position: relative;
+
+
+        .counter {
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            z-index: 1000;
+            height: 7%;
+            width: 30%;
+            padding: .6rem .4rem;
+
+            margin:0;
+        }
+        
+    }
+    .card-text {
+        margin-bottom: .25rem;
+    }
+    .card {
+        margin: 0px 10px;
+    }
+
+    .col-12.bg-dark.jumbotron {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        
+        
+
+
+        
+        .card {
+            height: 100% !important;
+            margin: 10px 0;
+            
+            
+        }
+
+    }
+    .map-row {
+        height: 40%;
+        margin-top: -30px;
+
+        overflow-x: scroll;
+    }
+
+    .no-points {
+        font-size: 120%;
+        padding: 0;
+        bottom: 5%;
+        margin: 0 -15px;
+    }
+
+
+
+}
+
+#dashboard-apartments-row {
+    position: relative;
+    height: 100%;
+    padding-top: 10px;
+
+
+
+
+}
+
+

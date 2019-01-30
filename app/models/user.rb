@@ -1,6 +1,7 @@
 class User < ApplicationRecord  
 
   has_many :points
+  has_many :apartments
   has_one_attached :uploaded_profile_pic
   
 

@@ -23,6 +23,11 @@ $landing-font: 'Aleo';
 @import "registrations";
 @import "passwords";
 @import "points";
+@import "apartments";
+
+* {
+  font-family: $landing-font
+}
 
 
 body, html {
@@ -68,6 +73,7 @@ body {
 .alert {
     position: absolute;
     width: 100%;
+    z-index: 10000;
 }
 
 
@@ -75,53 +81,7 @@ body {
 
 .grow:hover { transform: scale(1.5); }
 
-#circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 80px;
-  font-size: 45px;
-  color: white;
-  text-align: center;
-  line-height: 85px;
-  float: left;
-  margin: 20px;
-}
 
-.red {
-  background-color:red;
-}
-
-.blue {
-  background-color:#007fcc;
-}
-
-.green {
-  background-color:#6dc066;
-}
-
-.yellow {
-  background-color:#fee529;
-}
-
-.gray {
-  background-color:gray;
-}
-
-.purple {
-  background-color:purple;
-}
-
-.brown {
-  background-color:brown;
-}
-
-.orange {
-  background-color:orange;
-}
-
-.limegreen {
-  background-color:#c9f688;
-}
 
 .icons-holder {
     position: absolute;
@@ -131,3 +91,18 @@ body {
     width: 100%;
     overflow: hidden;
 }
+
+.map-jumbotron {
+  height: 100% ;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem;
+
+  #map {
+      height: 100%;
+      width: 100%;
+  }
+} 
+

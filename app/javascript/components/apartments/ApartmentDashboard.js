@@ -1,45 +1,44 @@
 import React from 'react';
-import PointsForm from './PointsForm';
-import PointsIndex from './PointsIndex';
-import PointsMap from './PointsMap';
+import ApartmentForm from './ApartmentForm';
+import ApartmentIndex from './ApartmentIndex';
+import ApartmentMap from './ApartmentMap';
 import {} from 'jquery-ujs';
 
 
 
-
-class PointsDashboard extends React.Component {
+class ApartmentsDashboard extends React.Component {
 
     constructor() {
         super();
-        this.increasePoints = this.increasePoints.bind(this);
-        this.decreasePoints = this.decreasePoints.bind(this);
-        this.state = { points: {} };
+        this.increaseApartments = this.increaseApartments.bind(this);
+        this.decreaseApartments = this.decreaseApartments.bind(this);
+        this.state = { apartments: {} };
+
 
     }
 
     componentDidUpdate() {
-
             
         let nyc = {lat: 40.7128, lng: -73.935242};
       
         let map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
+          zoom: 11,
           center: nyc
         });
-        
-        if (Object.keys(this.state.points).length > 0) {
 
-            let markers = [];
-            let bounds = new google.maps.LatLngBounds();
-            
-            for (let x in this.state.points) {
+        let markers = [];
+        let bounds = new google.maps.LatLngBounds();
+
+        if (Object.keys(this.state.apartments).length >= 1) {
+        
+        for (let x in this.state.apartments) {
 
                 let infowindow = new google.maps.InfoWindow({
-                    content: `<p><b>${this.state.points[x].name}</b></p>`
+                    content: `<p><b>${this.state.apartments[x].address}</b></p><p>$${this.state.apartments[x].price}</p>`,
                 });
 
                 let marker = new google.maps.Marker({
-                    position: {lat: Number(this.state.points[x].lat), lng: Number(this.state.points[x].lng)},
+                    position: {lat: Number(this.state.apartments[x].lat), lng: Number(this.state.apartments[x].lng)},
                     map: map
                 });
 
@@ -58,7 +57,7 @@ class PointsDashboard extends React.Component {
                     $(`#${x}`).removeClass('bg-primary text-light');
 
                 });
-
+                
                 markers.push(marker);
 
             }
@@ -73,11 +72,6 @@ class PointsDashboard extends React.Component {
         }
 
     }
-
-
-      
-
-
 
       
 
@@ -100,7 +94,7 @@ class PointsDashboard extends React.Component {
         $.ajax({
             type: 'get', 
             contentType: 'application/json',
-            url: '/user-points',
+            url: '/user-apartments',
             dataType: 'json',
             async: true,
             success: (result) => {
@@ -112,20 +106,19 @@ class PointsDashboard extends React.Component {
             },
             error: (data) => {
 
-                this.state = { points: {} };
+                this.state = { apartments: {} };
             }
         });
     }
     
 
-    increasePoints(newPoint) {
+    increaseApartments(newPoint) {
 
         
-    
         $.ajax({
             type: 'post', 
             contentType: 'application/json',
-            url: '/user-points',
+            url: '/user-apartments',
             data: JSON.stringify({ data: {toAdd: newPoint} }),
             dataType: 'json',
             async: true,
@@ -135,14 +128,16 @@ class PointsDashboard extends React.Component {
                 
                 if (data.message === 'saved') {
 
-                    const pointsCopy = {...this.state.points};
+                    const ApartmentsCopy = {...this.state.apartments};
 
                     newPoint['lat'] = data.lat;
                     newPoint['lng'] = data.lng;
 
-                    pointsCopy[`${data.id}`] = newPoint;
+                    ApartmentsCopy[`${data.id}`] = newPoint;
+
+                    console.log(newPoint);
             
-                    this.setState({ points: pointsCopy });
+                    this.setState({ apartments: ApartmentsCopy });
 
                 }
 
@@ -167,23 +162,28 @@ class PointsDashboard extends React.Component {
                     }, 2000);   
 
                 }
-                
+
                 else if (data.message === 'invalid_address') { 
 
                     console.log('ERROR');
 
                     let flash = $(
                         `
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            This address is <strong>invalid.</strong> 
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+                        <div class="alert alert-warning fade show" role="alert">
+                            You already have this address saved.
+                        </div>      
                         `
                     );
-    
+
                     $(flash).insertAfter($('.navbar'));
+
+                    flash.fadeOut(2000);
+
+                    setTimeout(()=> {
+
+                        flash.remove();
+
+                    }, 2000);   
 
                 }
 
@@ -251,7 +251,9 @@ class PointsDashboard extends React.Component {
 
     }
 
-    decreasePoints(oldPoint) {
+    decreaseApartments(oldPoint) {
+
+        console.log(oldPoint);
 
         
         if(confirm('Are you sure you want to do this?')) {
@@ -259,19 +261,21 @@ class PointsDashboard extends React.Component {
             $.ajax({
                 type: 'delete', 
                 contentType: 'application/json',
-                url: '/user-points',
+                url: '/user-apartments',
                 data: JSON.stringify({ data: {toDelete: oldPoint} }),
                 dataType: 'json',
                 async: true,
                 success: (data) => {
+
+                    console.log(data);
                     
                     if (data.message) {
 
-                        const pointsCopy = {...this.state.points};
+                        const apartmentsCopy = {...this.state.apartments};
 
-                        delete pointsCopy[oldPoint];
+                        delete apartmentsCopy[oldPoint];
             
-                        this.setState({ points: pointsCopy });
+                        this.setState({ apartments: apartmentsCopy });
     
                         let flash = $(`<div class="alert alert-success" role="alert">Point deleted sucessfully!</div>
                         `);
@@ -338,9 +342,9 @@ class PointsDashboard extends React.Component {
 
         return (
             <React.Fragment>
-                <PointsForm stateLength={Object.keys(this.state.points).length} updatePoints={this.increasePoints}/>
-                <PointsMap />
-                <PointsIndex points={this.state.points} updatePoints={this.decreasePoints}/>
+                <ApartmentForm apartments={this.state.apartment} stateLength={Object.keys(this.state.apartments).length} updateApartments={this.increaseApartments}/>
+                <ApartmentMap />
+                <ApartmentIndex apartments={this.state.apartments} updateApartments={this.decreaseApartments}/>
             </React.Fragment>
         );
     }
@@ -348,5 +352,5 @@ class PointsDashboard extends React.Component {
 
 }
 
-export default PointsDashboard;
+export default ApartmentsDashboard;
 

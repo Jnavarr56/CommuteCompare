@@ -8,7 +8,12 @@
 
 
 
-Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY")
-Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY")
-Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY")
+#Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY", user_id: 1)
+#Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY", user_id: 1)
+#oint.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY", user_id: 1)
+#Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY", user_id: 1)
+#Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY", user_id: 1)
+#Point.create(name: "Jorge", address: "2237 Stewart Avenue, Westbury NY", user_id: 1)
+
+
 

@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1TXbgDhq6fHK63-jHt7g5BZFwXSq_f9I&libraries=places"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -20,8 +23,11 @@
     <meta name="turbolinks-cache-control" content="no-cache">
     <meta name="turbolinks-visit-control" content="reload">
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
+
+  
 
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render "navigation/navbar" %>
@@ -34,5 +40,51 @@
       </div>
     <% end %>
     <%= yield %>
+
+    <% if (controller_name == 'points' && action_name == 'index') %>
+
+    <script>
+
+      $( document ).ready(function() {
+
+        autocomplete1 = new google.maps.places.Autocomplete(document.getElementById('address-input'), {
+
+          componentRestrictions: {country: 'us'}
+        });
+
+        autocomplete2 = new google.maps.places.Autocomplete(document.getElementById('name-input'), {
+          componentRestrictions: {country: 'us'},
+          types: ['establishment']
+        });
+
+        google.maps.event.addListener(autocomplete2, 'place_changed', function() {
+
+          let result = document.getElementById('name-input').value.split(',');
+
+          document.getElementById('name-input').value = result[0];
+          
+          document.getElementById('address-input').value = result.slice(0).join(', ');
+
+        });
+
+      });
+    </script>
+
+    <% elsif (controller_name == 'apartments' && action_name == 'index') %>
+
+    <script>
+
+    $( document ).ready(function() {
+      autocomplete1 = new google.maps.places.Autocomplete(document.getElementById('address-input'), {
+
+        componentRestrictions: {country: 'us'}
+
+      });
+    });
+  </script>
+
+
+  <% end %>
+
   </body>
 </html>

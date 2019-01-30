@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class PointCard extends React.Component {
 
 
@@ -14,17 +15,26 @@ class PointCard extends React.Component {
 
     render() {
         return(
-            <div className="card">
+            
+            
+            <div className="card" id={this.props.alias}>
                 <h5 className="card-header">{this.props.pointInfo.name}</h5>
                 <div className="card-body">
                     <p className="card-text">{this.props.pointInfo.address}</p>
-                    <a href="#" onClick={this.removePoint} className="btn btn-danger">Delete</a>
+                    <a href="#" onClick={this.removePoint} className="btn btn-danger btn-sm">Delete</a>
                 </div>
             </div>
+
+            
+    
+           
+
         );
     }   
 
 };
+
+
 
 
 
