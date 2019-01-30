@@ -22,6 +22,8 @@ class TableDashboard extends React.Component {
             valueNames: [ 'apartmentaddress', 'price', 'baths', 'inunitlaundry', 'petsallowed', 'hasownparking']
         };
 
+        if (Object.keys(this.state.tableData).length > 0) {
+
         this.state.tableData.header2.forEach((x, i) => {
 
             if (x.length > 0) {
@@ -47,7 +49,6 @@ class TableDashboard extends React.Component {
         console.log(options.valueNames);
           
         let tableList = new List('tableID', options);
-            
         
         $('.sort').each(function() {
 
@@ -134,6 +135,8 @@ class TableDashboard extends React.Component {
 
     }
 
+    }
+
 
     
     componentDidMount() {
@@ -148,6 +151,8 @@ class TableDashboard extends React.Component {
             }
 
         }, 2000);
+
+        let obj = this;
 
 
         $.ajax({
