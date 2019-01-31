@@ -1,7 +1,4 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { :host => 'commutecompare.herokuapp.com', port: 3000  }
-  # Verifies that versions and hashed value of the package contents in the project's package.json
-  config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -26,7 +23,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = Uglifier.new(harmony: true)
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -41,8 +38,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
-  # Store uploaded files on the local file system (see config/storage.yml for options)
-  #config.active_storage.service = :local
+  #Specify our Active Storage provider.
   config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain
@@ -65,7 +61,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "CommuteCompare_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "IFBuddy_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
 
@@ -87,7 +83,37 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+
+  
+
+  ######################################################
+  #EMAIL SETTINGS
+  ######################################################
+  # Don't care if the mailer can't send. #I set this to true on set up.
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_caching = false
+
+  #I added this on initial set up.
+  config.action_mailer.default_url_options = { :host => "commutecompare.herokuapp.com" }
+
+  #I added this on initial set up
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: '587',
+    authentication: :plain,
+    enable_starttls_auto: true,
+    domain: 'localhost.localdomain',
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
+  ######################################################
+  ######################################################
+  ######################################################
+
+
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
@@ -97,6 +123,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  
 end
