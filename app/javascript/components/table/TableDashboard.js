@@ -13,7 +13,6 @@ class TableDashboard extends React.Component {
         this.count = 1;
         this.didNotUpdate;
         this.missing;
-        
     }
 
     componentDidUpdate() {
@@ -96,7 +95,7 @@ class TableDashboard extends React.Component {
         for (let x = 0; x < this.state.tableData.coords.length; x++) {
 
                 let infowindow = new google.maps.InfoWindow({
-                    content: `<p><b>${this.state.tableData.coords[x].name}</b>></p><p>${this.state.tableData.coords[x].type === 'apartment' ? '$' + this.state.tableData.coords[x].price : this.state.tableData.coords[x].address}</p>`,
+                    content: `<p><b>${this.state.tableData.coords[x].name}</b>  </p><p>${this.state.tableData.coords[x].type === 'apartment' ? '$' + this.state.tableData.coords[x].price : this.state.tableData.coords[x].address}</p>`,
                 });
 
                 let marker = new google.maps.Marker({
@@ -151,9 +150,6 @@ class TableDashboard extends React.Component {
             }
 
         }, 2000);
-
-        let obj = this;
-
 
         $.ajax({
             type: 'get', 
@@ -328,9 +324,7 @@ class TableDashboard extends React.Component {
             return (
                 
                     <React.Fragment>
-                        
                         <div id="map"></div>
-                        
                         <CommuteTable sortTable={this.sortTable} tableData={this.state.tableData} />
                     </React.Fragment>
                 

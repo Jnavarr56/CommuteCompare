@@ -62,13 +62,18 @@ class PointsDashboard extends React.Component {
                 markers.push(marker);
 
             }
+            
+            if (markers.length > 1) {
 
-            for (let i = 0; i < markers.length; i++) {
+                for (let i = 0; i < markers.length; i++) {
 
-                bounds.extend(markers[i].getPosition());
+                    bounds.extend(markers[i].getPosition());
+                }
+
+                map.fitBounds(bounds);
+
             }
 
-            map.fitBounds(bounds);
 
         }
 

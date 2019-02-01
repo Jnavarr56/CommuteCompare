@@ -15,6 +15,8 @@ class DashboardController < ApplicationController
 
   def dash
 
+    @user = current_user
+
   end
 
   def get_table_data

@@ -62,12 +62,16 @@ class ApartmentsDashboard extends React.Component {
 
             }
 
-            for (let i = 0; i < markers.length; i++) {
+            if (markers.length > 1) {
 
-                bounds.extend(markers[i].getPosition());
+                for (let i = 0; i < markers.length; i++) {
+
+                    bounds.extend(markers[i].getPosition());
+                }
+
+                map.fitBounds(bounds);
+
             }
-
-            map.fitBounds(bounds);
 
         }
 

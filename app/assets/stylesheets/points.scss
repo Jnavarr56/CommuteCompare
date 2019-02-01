@@ -13,6 +13,12 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        .map-jumbotron {
+            padding: 5px !important;
+            margin-bottom: 2rem !important;
+            margin-top: 2rem !important;    
+        }
+    
         .col-12 {
             padding: 0 !important;
         }
@@ -90,7 +96,7 @@
     .map-jumbotron {
         padding: 5px !important;
         margin-bottom: 2rem !important;
-        margin-top: 2rem !important;
+        margin-top: 2rem !important;    
     }
 
 }
@@ -109,8 +115,7 @@
             padding: 0;
         }
         .jumbotron {
-            margin-bottom: 10px !important; 
-            border-radius: 0;
+            margin-bottom: 10px !important;     
         }
         .map-row {
             margin-top: 0;

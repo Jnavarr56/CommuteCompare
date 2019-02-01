@@ -29,6 +29,9 @@ $landing-font: 'Aleo';
   font-family: $landing-font
 }
 
+html {
+    overflow: hidden;
+}
 
 body, html {
     height: 100vh;
@@ -102,9 +105,10 @@ body {
   padding: 2rem 2rem;
 
   #map {
-      height: 100%;
-      width: 100%;
+    height: 94%;
+    width: 95%;
   }
+
 } 
 
 #particle-js {
@@ -113,4 +117,26 @@ body {
     height: 100% !important;
     width: 100% !important;
     z-index: -1;
+}
+.nav-item {
+    position: relative;
+    left: 64px;
+}
+.nav-image {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    img {
+        height: 56px;
+    }
+    left: 56px;
+
+    i {
+        color: white;
+        position: relative;
+        top: 40%;
+        transform: translateY(-50%);
+        left: 15px;
+    }
+    
 }

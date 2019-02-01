@@ -30,8 +30,16 @@
                     label, h2 {
                         font-family: $landing-font;
                     }
+                    * {
+                        color: white;
+                    }
                     .btn-edit {
                         margin-top: 10px;
+                    }
+                    .badge {
+                        i {
+                            color: black !important;
+                        }
                     }
                 }
             }

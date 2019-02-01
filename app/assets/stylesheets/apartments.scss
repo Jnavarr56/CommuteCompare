@@ -63,22 +63,11 @@
         margin-bottom: .25rem;
     }
     .card {
-        margin: 0px 10px;
+        margin: 15px 10px;
     }
 
-    .col-12.bg-dark.jumbotron {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      
+    .col-12.bg-dark.jumbotron {      
         margin-bottom: 0;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        
-        
-        
-
-
         
         .card {
             height: 100% !important;
@@ -89,17 +78,28 @@
 
     }
     .map-row {
-        height: 40%;
-        margin-top: -30px;
+        //margin-top: -30px;
+        .col-12.bg-dark.jumbotron {
+            height: auto;
+            padding: 15px;
 
-        overflow-x: scroll;
+        }
+        
     }
-
     .no-points {
         font-size: 120%;
         padding: 0;
-        bottom: 5%;
-        margin: 0 -15px;
+        //bottom: 5%;
+        .card.mb-3 {
+            margin: 0;
+            margin-bottom: 2rem !important;
+        }
+    }
+
+    .map-jumbotron {
+        padding: 5px !important;
+        margin-bottom: 2rem !important;
+        margin-top: 2rem !important;
     }
 
 
