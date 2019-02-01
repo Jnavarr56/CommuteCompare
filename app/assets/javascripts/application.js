@@ -14,3 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('turbolinks:load', function() {
+
+    if (location.protocol === 'http:' && location.host !== 'localhost:3000') {
+
+        window.location = location.href.replace('http:', 'https:');
+
+    }
+
+
+
+
+});

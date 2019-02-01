@@ -24,9 +24,6 @@
                     label, h2 {
                         font-family: $landing-font;
                     }
-                    .btn {
-                        margin: 5px;
-                    } 
                 }
             }
         }
@@ -53,7 +50,7 @@
                             margin: 0;
                         }
                         .btn {
-                            margin:  5px 0 5px 0;
+                            margin: 5px 0 5px 0;
                             text-align: center;
                         }
                     }
@@ -109,9 +106,4 @@
         transform: translateX(5%);
     }
 
-}
-
-
-#real-log-in-button {
-    display: none;
 }

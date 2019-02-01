@@ -36,9 +36,10 @@ body, html {
 }
 body {
     margin: 0 auto;
-    background: #DA22FF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    
     animation: Gradient 15s ease infinite;
     background-size: 400% 400%;
 }
@@ -106,3 +107,10 @@ body {
   }
 } 
 
+#particle-js {
+    position: absolute !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    z-index: -1;
+}

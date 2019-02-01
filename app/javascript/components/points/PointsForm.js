@@ -43,7 +43,7 @@ class PointsForm extends React.Component {
         
 
         return (
-            <div className="col-5">
+            <div className="col-12">
                 <form  className="jumbotron bg-dark" onSubmit={this.addPoint}>
                     <div className="form-group">
                         <label className="text-light" htmlFor="point-name">Name</label>

@@ -339,8 +339,9 @@ class PointsDashboard extends React.Component {
         return (
             <React.Fragment>
                 <PointsForm stateLength={Object.keys(this.state.points).length} updatePoints={this.increasePoints}/>
-                <PointsMap />
                 <PointsIndex points={this.state.points} updatePoints={this.decreasePoints}/>
+                <PointsMap />
+                
             </React.Fragment>
         );
     }

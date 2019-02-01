@@ -1,6 +1,6 @@
 .dashboard {
     &.landing {
-        overflow: hidden;
+        overflow: scroll;
         .container-fluid {
             height: 100%;
             width: 100%;
@@ -15,10 +15,12 @@
                 align-items: center;
                 justify-content: center;
                 .jumbotron {
+                    height: auto;
                     p { font-family: $landing-font; }
                     ul { font-family: $landing-font; }
                     h1 { font-family: $landing-font; }
                     //z-index: 1000;
+                    
                     //background-color: white;
                 }
             }
@@ -41,10 +43,12 @@
                     .column {
                         height: 100%;
                         .jumbotron {
-                            height: 100%;
                             h1 { font-weight: bolder; font-family: $landing-font; font-size: 200%;}
                             ul { font-family: $landing-font; font-size: 100%;}
                             p { font-family: $landing-font; font-size: 100%; margin-bottom: 1rem;}
+                            .btn {
+                                margin: 5px;
+                            }
                         }
                     }
                 }

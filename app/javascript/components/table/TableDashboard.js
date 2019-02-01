@@ -174,6 +174,7 @@ class TableDashboard extends React.Component {
                         this.progressTicker = setInterval(()=> {
 
                             this.refs.progressBar.style.width = `${this.count ++}%`;
+
                             
                             if (this.count === 101) {
                 
@@ -296,7 +297,9 @@ class TableDashboard extends React.Component {
             return (
 
                 <div className="progress">
-                    <div ref="progressBar" className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div ref="progressBar" className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <h1 id="loading-text" className="loading-text">Fetching Your Data Account Data</h1>
+                    </div>
                 </div>
 
             )
@@ -311,7 +314,7 @@ class TableDashboard extends React.Component {
                     <h1 className="display-4">You haven't chosen any {this.missing === "both" ? "any apartments or points of interest" : (this.missing === "apartments" ? "apartments" : "points of interest")} yet!</h1>
                     <p className="lead">You'll need to do that before I can generate your table.</p>
                     <hr className="my-4"/>
-                    <p>Click <a href="/points">Points of Interest</a> or <a href="/apartments">Apartments</a> in the nav bar to get started.</p>
+                    <p>Go to <a href="/points">Points of Interest</a> or <a href="/apartments">Apartments</a> to get started.</p>
                 </div>
 
             );

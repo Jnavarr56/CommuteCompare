@@ -80,4 +80,6 @@ gem 'webpacker', '~> 3.5'
 
 #https://www.rubydoc.info/gems/googlemaps-services
 gem 'googlemaps-services' #<-- GOOD
+
+gem 'particles-js-rails', '~> 2.0'
 ####################################

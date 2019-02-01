@@ -13,6 +13,9 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        .col-12 {
+            padding: 0 !important;
+        }
         .row {
             .col-5, .col-7  {
                 height: 50%;
@@ -26,6 +29,7 @@
                 align-self: flex-start;
             }
             width: 100%; 
+            height: auto;
             display: flex;
             justify-content: space-evenly;
             align-items: flex-start;
@@ -33,7 +37,7 @@
     }
     form {
         button {
-            margin-top: 10%;
+            margin-top: 1.5rem;
         }
         position: relative;
         height: 100%;
@@ -44,7 +48,7 @@
             z-index: 1000;
             height: 7%;
             width: 30%;
-            padding: .6rem .4rem;
+            padding: .2rem;
 
             margin:0;
         }
@@ -53,16 +57,11 @@
         margin-bottom: .25rem;
     }
     .card {
-        margin: 0px 10px;
+        margin: 15px 10px;
     }
 
     .col-12.bg-dark.jumbotron {
         margin-bottom: 0;
-
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        overflow-x: scroll;
         
         .card {
         
@@ -71,23 +70,62 @@
     }
     .map-row {
         height: 40%;
-        margin-top: -30px;
+        //margin-top: -30px;
+        .col-12.bg-dark.jumbotron {
+            height: auto;
+
+        }
+        
     }
     .no-points {
         font-size: 120%;
         padding: 0;
-        bottom: 5%;
-        margin: 0 -15px;
+        //bottom: 5%;
+        .card.mb-3 {
+            margin: 0;
+            margin-bottom: 2rem !important;
+        }
+    }
+
+    .map-jumbotron {
+        padding: 5px !important;
+        margin-bottom: 2rem !important;
+        margin-top: 2rem !important;
     }
 
 }
 
 #dashboard-points-row {
     height: 100%;
-    padding-top: 10px;
+    padding-top: 2rem;
 
 }
 
 
+@media (max-width: 850px) {
 
+    .points.index {
+        .container-fluid {
+            padding: 0;
+        }
+        .jumbotron {
+            margin-bottom: 10px !important; 
+        }
+        .map-row {
+            margin-top: 0;
+        }
+
+        .map-jumbotron {
+            height: 60% !important;
+        }
+
+        form.jumbotron.bg-dark {
+            .btn {
+
+            }
+        }
+
+    }
+
+} 
 

@@ -4,10 +4,10 @@
 
 .dashboard.dash {
 
-    height: 115vh;
-
     .container-fluid {
-
+        height: 100%;
+        width: 100%;
+        position: relative;
     }
     
 
@@ -16,15 +16,30 @@
     }
 
     .progress {
-        height: 150px;
-        position: relative;
-        top: 30vh;
+        height: 5vh;
+        width: 75%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -75%);
     }
         
     .has-no-models {
 
         * {
             color: white;
+        }
+
+        width: 80%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -75%);
+
+        a {
+            text-decoration: underline;
         }
 
     }
@@ -35,3 +50,28 @@
 
 
 
+.dashboard.landing {
+    overflow: scroll;
+}
+
+@media (max-width: 576px) {
+
+    .has-no-models {
+        .display-4  {
+            font-size: 1.5rem;  
+        }
+    }
+} 
+
+.loading-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: black;
+    margin: 0;
+
+}
+    
+    
