@@ -9,9 +9,9 @@ CommuteCompare is a mostly responsive full stack web app that uses the Google Ma
   - React
   - Ruby on Rails 5.2.2
   - Amazon Web Services (S3)
-  - [Google Distance Matrix API] (https://developers.google.com/maps/documentation/distance-matrix/start)
-  - [Google Places Autocomplete API] (https://developers.google.com/places/web-service/autocomplete)
-  - [Google Maps JavaScript API] (https://developers.google.com/maps/documentation/javascript/tutorial)
+  - [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start)
+  - [Google Places Autocomplete API](https://developers.google.com/places/web-service/autocomplete)
+  - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial)
   - Facebook OAuth API
   - Google OAuth API
   - PostgreSQL
@@ -25,7 +25,7 @@ CommuteCompare is a mostly responsive full stack web app that uses the Google Ma
 ###### Other libraries/frameworks/etc include:
 - [Devise](https://www.google.com) - Flexible MVC based user authentication solution for Rails.
 - [Ruby Client for Google Maps APIs](https://github.com/amrfaissal/googlemaps-services) - Ruby client library allowing you to access Google Maps APIs.
-- [List.js] (https://listjs.com/) - "Tiny, invisible and simple, yet powerful and incredibly fast vanilla JavaScript that adds search, sort, filters and flexibility to plain HTML lists, tables, or anything".
+- [List.js](https://listjs.com/) - "Tiny, invisible and simple, yet powerful and incredibly fast vanilla JavaScript that adds search, sort, filters and flexibility to plain HTML lists, tables, or anything".
 
 ## User Features
 
