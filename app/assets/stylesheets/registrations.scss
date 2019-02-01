@@ -41,22 +41,25 @@
                             color: black !important;
                         }
                     }
+                    input {
+                        color: black;
+                    }
                 }
             }
+
+            #preview-pic, #current-account-pic {
+                height: 200px;
+                width: 200px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-bottom: 5px;
+            }
+
+            #preview-pic {
+                display: none;
+            }
         }
-
-#preview-pic, #current-account-pic {
-    height: 200px;
-    width: 200px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 5px;
-}
-
-#preview-pic {
-    display: none;
-}
     }
 }
 

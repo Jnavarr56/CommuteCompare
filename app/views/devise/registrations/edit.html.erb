@@ -6,63 +6,65 @@
   <%= devise_error_messages! %>
 
 
-  <%-# Added our custom registration fields as well as a field section for profile picture. -%>
   <div class="field form-group">
   
-    <%= f.label :img, "Profile Picture" %><br />
+  <%= f.label :img, "Profile Picture" %><br />
   
-    <button id="clear-upload-button" class="btn btn-primary">Clear Upload</button>
-    <div class="custom-file">
-      <%= f.file_field :uploaded_profile_pic, class: "custom-file-input" %>
-      <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-      <div class="invalid-feedback">Example invalid custom file feedback</div>
-    </div>
-  </div>
+  <img id="preview-pic">
   
-  <div class="field form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+  <%= @user.return_user_img %>    
+  <button id="clear-upload-button" class="btn btn-primary">Clear Upload</button>
+  <div class="custom-file">
+    <%= f.file_field :uploaded_profile_pic, class: "custom-file-input" %>
+    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+    <div class="invalid-feedback">Example invalid custom file feedback</div>
   </div>
+</div>
 
-  <div class="field form-group">
-    <%= f.label :first_name, "First Name" %><br />
-    <%= f.text_field :first_name, class: "form-control" %>
-  </div>
+<div class="field form-group">
+  <%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+</div>
 
-  <div class="field form-group">
-    <%= f.label :last_name, "Last Name" %><br />
-    <%= f.text_field :last_name, class: "form-control" %>
-  </div>
+<div class="field form-group">
+  <%= f.label :first_name, "First Name" %><br />
+  <%= f.text_field :first_name, class: "form-control" %>
+</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+<div class="field form-group">
+  <%= f.label :last_name, "Last Name" %><br />
+  <%= f.text_field :last_name, class: "form-control" %>
+</div>
+
+<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+<% end %>
+
+<div class="field form-group">
+  <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+  <% if @minimum_password_length %>
+    <br />
+    <em><%= @minimum_password_length %> characters minimum</em>
   <% end %>
+</div>
 
-  <div class="field form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+<div class="field form-group">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+</div>
 
-  <div class="field form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-  </div>
+<div class="field form-group">
+  <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <%= f.password_field :current_password, autocomplete: "current-password", id: "current-password-id", class: "form-control" %>
+</div>
 
-  <div class="field form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", id: "current-password-id", class: "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update", id: "submit-update-button", class:"btn btn-primary btn-edit" %>
-    <a href="#" id="trigger-account-cancel" class="btn btn-danger btn-edit">Cancel Account</a>
-  </div>
+<div class="actions">
+  <%= f.submit "Update", id: "submit-update-button", class:"btn btn-primary btn-edit" %>
+  <a href="#" id="trigger-account-cancel" class="btn btn-danger btn-edit">Cancel Account</a>
+</div>
 <% end %>
 <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-edit d-none", id: "real-account-cancel"%>
-    </div>
   </div>
+</div>
 </div>
