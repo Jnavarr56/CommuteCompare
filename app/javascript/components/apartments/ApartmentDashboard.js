@@ -343,8 +343,9 @@ class ApartmentsDashboard extends React.Component {
         return (
             <React.Fragment>
                 <ApartmentForm apartments={this.state.apartment} stateLength={Object.keys(this.state.apartments).length} updateApartments={this.increaseApartments}/>
-                <ApartmentMap />
                 <ApartmentIndex apartments={this.state.apartments} updateApartments={this.decreaseApartments}/>
+                <ApartmentMap />
+                
             </React.Fragment>
         );
     }

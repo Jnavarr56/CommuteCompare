@@ -14,20 +14,9 @@
         justify-content: center;
         align-items: flex-start;
         .row {
-
-            .col-5, .col-7  {
-                height: 50%;
-                margin-bottom: -2%;
-            } 
-
-            .col-5 {
-                padding-left: 0;
-                form {
-                    padding: 30px 30px 15px 30px;
-                    label, .form-group {
-                        margin-bottom: .15rem;
-                    }
-                }
+            .col-12 {
+                padding: 0;
+                margin-bottom: 2rem !important;
             }
             .left-col {
                 align-self: flex-start;
@@ -120,7 +109,7 @@
 #dashboard-apartments-row {
     position: relative;
     height: 100%;
-    padding-top: 10px;
+    padding-top: 2rem;
 
 
 
@@ -128,3 +117,30 @@
 }
 
 
+@media (max-width: 850px) {
+
+    .apartments.index {
+        .container-fluid {
+            padding: 0;
+        }
+        .jumbotron {
+            margin-bottom: 10px !important; 
+            border-radius: 0;
+        }
+        .map-row {
+            margin-top: 0;
+        }
+
+        .map-jumbotron {
+            height: 60% !important;
+        }
+
+        form.jumbotron.bg-dark {
+            .btn {
+
+            }
+        }
+
+    }
+
+} 

@@ -7,7 +7,7 @@ class ApartmentMap extends React.Component {
 
         return (
             
-                <div className="map-jumbotron jumbotron bg-dark col-7">
+                <div className="map-jumbotron jumbotron bg-dark col-12">
                     <div id="map"></div>
                 </div>
             

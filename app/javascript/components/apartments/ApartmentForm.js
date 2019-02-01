@@ -77,7 +77,7 @@ class ApartmentsForm extends React.Component {
         
 
         return (
-            <div className="col-5">
+            <div className="col-12">
                 <form  className="jumbotron bg-dark" onSubmit={this.addApartment}>
                     <div className="form-group">
                         <label className="text-light" htmlFor="Address">Address</label>
