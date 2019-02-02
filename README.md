@@ -2,7 +2,7 @@
 
 CommuteCompare is a mostly responsive full stack web app that uses the Google Maps API to automatically calculate the current NYC public transit commute time to your potential NYC apartments from your favorite places.
 
-[commutecompare.herokuapp.com](commutecompare.herokuapp.com)
+[commutecompare.herokuapp.com](https://commutecompare.herokuapp.com)
 
 ###### CommuteCompare is deployed on Heroku and uses:
 
