@@ -70,7 +70,7 @@ class ApartmentsController < ApplicationController
   
       else
 
-        if Apartment.where({address: location[3]}).exists?
+        if Apartment.where({address: location[3], user_id: current_user.id}).exists?
 
           render json: { 'message' => 'already_exists' } and return
 
